@@ -257,7 +257,7 @@ class RestClient
     /**
      * @return AccountInterface
      */
-    protected function getAccounts()
+    protected function getAccount()
     {
         if (!$this->_account) {
             $this->_account = new AccountInterface($this->client, $this->client->getAuthId());
@@ -268,7 +268,7 @@ class RestClient
     /**
      * @return MessageInterface
      */
-    protected function getMessages()
+    protected function getMessage()
     {
         if (!$this->_message) {
             $this->_message = new MessageInterface($this->msgClient, $this->msgClient->getAuthId());
@@ -279,7 +279,7 @@ class RestClient
     /**
      * @return PowerpackInterface
      */
-    protected function getPowerpacks()
+    protected function getPowerpack()
     {
         if (!$this->_powerpack) {
             $this->_powerpack = new PowerpackInterface($this->client, $this->client->getAuthId());
