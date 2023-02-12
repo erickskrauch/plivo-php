@@ -14,6 +14,7 @@ use Plivo\Resources\Resource;
  * @property string $lata
  * @property string $number
  * @property string $type
+ * @property string $subType
  * @property string $monthlyRentalRate
  * @property string $prefix
  * @property string $rateCenter
@@ -48,6 +49,7 @@ class PhoneNumber extends Resource
             'lata' => $response['lata'],
             'number' => $response['number'],
             'type' => $response['type'],
+            'subType' => $response['sub_type'],
             'monthlyRentalRate' => $response['monthly_rental_rate'],
             'prefix' => $response['prefix'],
             'rateCenter' => $response['rate_center'],
