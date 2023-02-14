@@ -76,8 +76,6 @@ class PlivoResponse
             new PlivoResponseException(
                 null, null, null,
                 $this->decodedContent, $this->statusCode);
-
-        echo $this->thrownException->getMessage();
     }
 
 
