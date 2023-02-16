@@ -23,15 +23,15 @@ use Plivo\Resources\Resource;
  * @property string $numberType The type of the number. The values can be 'local', 'tollfree' and 'national'
  * @property string $region The region, with the city and the country this number belongs to.
  * @property string $resourceUri
- * @property string $smsEnabled Lets you know if the number is SMS enabled. If the value returned is 'true', then you
+ * @property bool $smsEnabled Lets you know if the number is SMS enabled. If the value returned is 'true', then you
  * will be able to receive SMS on this number.
- * @property string $smsRate The cost of receiving an SMS on the number in USD.
- * @property string $mmsEnabled Lets you know if the number is MMS enabled. If the value returned is 'true', then you
+ * @property float|null $smsRate The cost of receiving an SMS on the number in USD.
+ * @property bool $mmsEnabled Lets you know if the number is MMS enabled. If the value returned is 'true', then you
  * will be able to receive MMS on this number.
- * @property string $mmsRate The cost of receiving an MMS on the number in USD.
- * @property string $voiceEnabled Lets you know if the number is voice enabled. If the value returned is 'true', then
+ * @property float|null $mmsRate The cost of receiving an MMS on the number in USD.
+ * @property bool $voiceEnabled Lets you know if the number is voice enabled. If the value returned is 'true', then
  * you will be able to receive calls on this number.
- * @property string $voiceRate The cost of receiving a voice call on this number per minute in USD.
+ * @property float|null $voiceRate The cost of receiving a voice call on this number per minute in USD.
  * @property string $complianceApplicationId The ID of compliance application associated with this number.
  * @property string $complianceStatus The status of the compliance application associated with this number.
  * @property string $subAccount The subaccount associated with the number. If the number belongs to the main parent
@@ -63,12 +63,12 @@ class Number extends Resource
             'region' => $response['region'],
             'resourceUri' => $response['resource_uri'],
             'smsEnabled' => $response['sms_enabled'],
-            'smsRate' => $response['sms_rate'],
+            'smsRate' => $response['sms_rate'] ?? null,
             'mmsEnabled' => $response['mms_enabled'],
-            'mmsRate' => $response['mms_rate'],
+            'mmsRate' => $response['mms_rate'] ?? null,
             'subAccount' => $response['sub_account'],
             'voiceEnabled' => $response['voice_enabled'],
-            'voiceRate' => $response['voice_rate'],
+            'voiceRate' => $response['voice_rate'] ?? null,
             'complianceApplicationId' => $response['compliance_application_id'],
             'complianceStatus' => $response['compliance_status'],
             'tendlcCampaignId' => $response['tendlc_campaign_id'],
