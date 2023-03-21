@@ -50,6 +50,8 @@ class PlivoResponseException extends PlivoRestException
             } else {
                 return json_encode($this->responseData['error']);
             }
+        } elseif (array_key_exists('message', $this->responseData?: [])) {
+            return $this->responseData['message'];
         } else {
             return null;
         }
