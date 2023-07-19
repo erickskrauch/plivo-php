@@ -195,7 +195,7 @@ class BaseClient
         static::$requestCount++;
 
         if (!$plivoResponse->ok() && !static::$isVoiceRequest) {
-            throw new $plivoResponse->getThrownException();
+            throw $plivoResponse->getThrownException();
         }
         if ($plivoResponse->getStatusCode() >= 500 && static::$isVoiceRequest) {
             static::$voiceRetryCount++;
